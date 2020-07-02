@@ -1,0 +1,57 @@
+{
+  "extends": [
+    "airbnb-typescript",
+    "airbnb/hooks",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:jest/recommended",
+    "plugin:css-modules/recommended",
+    "prettier",
+    "prettier/react",
+    "prettier/@typescript-eslint"
+  ],
+  "plugins": ["react", "@typescript-eslint", "jest", "css-modules", "prettier", "simple-import-sort"],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2018,
+    "sourceType": "module",
+    "project": "./tsconfig.json"
+  },
+  "env": {
+    "browser": true,
+    "es6": true,
+    "jest": true
+  },
+  "rules": {
+    "prettier/prettier": ["error", {
+      "semi": false,
+      "trailingComma": "all",
+      "singleQuote": true,
+      "printWidth": 100,
+      "tabWidth": 2,
+      "arrowParens": "avoid"
+    }],
+    "import/prefer-default-export": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/no-empty-function": "off",
+    "no-param-reassign": ["error", { "props": true, "ignorePropertyModificationsFor": ["state"]}],
+    "react/prop-types": "off",
+    "simple-import-sort/sort": [
+      "error",
+      {
+        "groups": [
+          // external packages
+          ["^[^@]\\w"],
+
+          // alias packages
+          ["^@\\w"],
+
+          // relative imports
+          ["^\\."]
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,27 @@
+.container {
+    padding: 15px;
+}
+
+.container > * {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+}
+
+.container > *:last-child {
+    margin-bottom: 0px;
+}
+
+.description,
+.authorized,
+.authorizedDate {
+    flex: 8 0 0;
+}
+
+.type,
+.amount,
+.runningBalance {
+    flex: 4 0 0;
+    text-align: right;
+}
